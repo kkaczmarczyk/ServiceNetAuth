@@ -21,6 +21,7 @@ before_install:
   - npm -v
 install:
   - chmod +x mvnw
+  - ./mvnw dependency:go-offline --no-transfer-progress
 script:
   - ./mvnw -Pprod verify jib:dockerBuild
 notifications:
